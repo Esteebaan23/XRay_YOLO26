@@ -78,9 +78,6 @@ The system not only predicts but also logs the health of the model in production
 * **Prediction Balance:** Ratio between "Normal" and "Anomaly" detections.
 
 ```bash
-...
-
-
 ## 📂 **Project Structure**
 XRay_YOLO26/
 ├── app/
