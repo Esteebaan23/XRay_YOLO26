@@ -54,7 +54,7 @@ To run the project locally and access the MLOps dashboard:
 ### Steps
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Esteebaan23/XRay_YOLO26.git](https://github.com/Esteebaan23/XRay_YOLO26.git)
+    git clone https://github.com/Esteebaan23/XRay_YOLO26.git
     cd XRay_YOLO26
     ```
 
@@ -79,27 +79,14 @@ The system not only predicts but also logs the health of the model in production
 
 ---
 
-## 🖼️ **Screenshots**
-
-### 1. Diagnostic Interface (With Grad-CAM)
-![Web Interface](https://via.placeholder.com/800x400?text=Insert+Interface+Screenshot+Here)
-*The system displays the diagnosis, confidence score, and a heatmap overlay on the affected area.*
-
-### 2. MLflow Dashboard
-![MLflow Dashboard](https://via.placeholder.com/800x400?text=Insert+MLflow+Screenshot+Here)
-*Real-time logging of experiments and performance metrics.*
-
----
-
 ## 📂 **Project Structure**
 XRay_YOLO26/ ├── app/ │ ├── main.py # FastAPI Entry Point and Frontend │ ├── service.py # Inference Logic and Grad-CAM │ ├── config.py # Global Configurations │ └── schemas.py # Pydantic Data Models ├── models/ │ └── best_model.pt # YOLO26 Trained Weights ├── mlruns/ # MLflow Logs (Gitignored) ├── Dockerfile # Multi-stage Docker Definition ├── docker-compose.yml # Service Orchestration (API + MLflow) └── requirements.txt # Python Dependencies
 ---
 
-## 📂 **Project Structure**
 ## 👨‍💻 **Author**
-**Esteban Lucero**
+**Harold Lucero**
 * [GitHub](https://github.com/Esteebaan23)
-* [LinkedIn](INSERT_YOUR_LINKEDIN_URL)
+* [LinkedIn](https://www.linkedin.com/in/harold-lucero-nieto-a70275259/)
 
 ---
 *This project was developed for academic and demonstration purposes in MLOps and AI Engineering.*
