@@ -10,7 +10,7 @@ A comprehensive anomaly detection system for chest X-rays using Deep Learning. T
 
 ## 🚀 **Live Demo**
 Try the system deployed on Google Cloud Run (Serverless):
-### 👉 **[INSERT_YOUR_APP_LINK_HERE]**
+### 👉 **https://xray-service-5372311531.us-central1.run.app/**
 
 *(Note: Since the service uses a "Scale-to-Zero" configuration for cost efficiency, the first request might take 15-30 seconds to wake up the container. Subsequent requests will be instant).*
 
