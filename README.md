@@ -77,7 +77,9 @@ The system not only predicts but also logs the health of the model in production
 * **Confidence Distribution:** Detection of *Model Drift* (monitoring if the model becomes less certain over time).
 * **Prediction Balance:** Ratio between "Normal" and "Anomaly" detections.
 
----
+```bash
+...
+
 
 ## 📂 **Project Structure**
 XRay_YOLO26/
@@ -95,7 +97,7 @@ XRay_YOLO26/
 ├── Dockerfile             # Multi-stage Docker build for production deployment
 ├── docker-compose.yml     # Service orchestration (FastAPI API + MLflow)
 └── requirements.txt       # Python dependencies
-
+```
 
 
 ---
