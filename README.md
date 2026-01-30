@@ -81,19 +81,22 @@ The system not only predicts but also logs the health of the model in production
 ```bash
 XRay_YOLO26/
 ├── app/
-│   ├── main.py            # FastAPI entry point (API routes & request handling)
-│   ├── service.py         # Model inference pipeline & Grad-CAM generation
-│   ├── config.py          # Global configuration (paths, constants, env vars)
-│   └── schemas.py         # Pydantic schemas for request/response validation
+│   ├── main.py               # FastAPI entry point (API routes & request handling)
+│   ├── service.py            # Model inference pipeline & Grad-CAM generation
+│   ├── config.py             # Global configuration (paths, constants, env vars)
+│   └── schemas.py            # Pydantic schemas for request/response validation
 │
 ├── models/
-│   └── best_model.pt      # Trained YOLO26 model weights
+│   └── best_model.pt         # Trained YOLO26 model weights
+|
+├── Train_Val/
+│   ├── Train_YOLO26.py       # Train YOLO26 + CLAHE
+│   ├── Benchmark_models.py   # Benchmark models using MLFlow
+│   └── Eval_YOLO26.py        # Eval the best model
 │
-├── mlruns/                # MLflow experiments and artifacts (gitignored)
-│
-├── Dockerfile             # Multi-stage Docker build for production deployment
-├── docker-compose.yml     # Service orchestration (FastAPI API + MLflow)
-└── requirements.txt       # Python dependencies
+├── Dockerfile                # Multi-stage Docker build for production deployment
+├── docker-compose.yml        # Service orchestration (FastAPI API + MLflow)
+└── requirements.txt          # Python dependencies
 ```
 
 
