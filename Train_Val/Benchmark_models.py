@@ -25,7 +25,7 @@ MODELS_TO_BENCHMARK = {
     "YOLO26x-cls_CLAHE_best": os.path.join(MODELS_DIR, "YOLO26x-cls_clahe_best.pt"),
 }
 
-TEST_DATA_PATH = r"/home/STUDENTS/hel0057/Downloads/XRay/test"  # contiene anomaly/ y normal/
+TEST_DATA_PATH = r"/XRay/test"  # contiene anomaly/ y normal/
 
 FOLDER_MAP = {"anomaly": 0, "normal": 1}
 TARGET_NAMES = ["anomaly", "normal"]
@@ -253,3 +253,4 @@ if __name__ == "__main__":
         evaluate_model(name, path, df_test)
 
     print("\n✅ Benchmark terminado. Abre MLflow UI para comparar runs.")
+
