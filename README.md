@@ -82,16 +82,27 @@ The system not only predicts but also logs the health of the model in production
 ## 📂 **Project Structure**
 XRay_YOLO26/ 
 ├── app/ │ 
+
    ├── main.py # FastAPI Entry Point and Frontend │ 
+   
    ├── service.py # Inference Logic and Grad-CAM │ 
+   
    ├── config.py # Global Configurations │ 
+   
    └── schemas.py # Pydantic Data Models 
+   
 ├── models/ │ 
+
    └── best_model.pt # YOLO26 Trained Weights 
+   
 ├── mlruns/ # MLflow Logs (Gitignored) 
+
 ├── Dockerfile # Multi-stage Docker Definition 
+
 ├── docker-compose.yml # Service Orchestration (API + MLflow) 
+
 └── requirements.txt # Python Dependencies
+
 ---
 
 ## 👨‍💻 **Author**
