@@ -20,7 +20,7 @@ from ultralytics.data.dataset import ClassificationDataset
 CURRENT_DIR = Path(__file__).resolve().parent
 
 # Dataset root: debe contener train/ y val/ (test puede existir pero NO se usa aquí)
-DATA_ROOT = Path(r"/home/STUDENTS/hel0057/Downloads/XRay")  # contiene train/, val/, test/ (opcional)
+DATA_ROOT = Path(r"/XRay")  # contiene train/, val/, test/ (opcional)
 # Estructura:
 # DATA_ROOT/train/normal, DATA_ROOT/train/anomaly
 # DATA_ROOT/val/normal,   DATA_ROOT/val/anomaly
@@ -215,7 +215,7 @@ def log_artifacts_from_run_dir(save_dir: Path):
 # Train one variant
 # =========================
 def train_variant(variant_name: str, weights_path: Path):
-    # ✅ Cierra cualquier run que haya quedado abierto por un crash anterior
+    #  Cierra cualquier run que haya quedado abierto por un crash anterior
     mlflow.end_run()
 
     run_name = f"{variant_name}_CLAHE_trainval_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
@@ -228,7 +228,7 @@ def train_variant(variant_name: str, weights_path: Path):
 
             print(f"\n🚀 Entrenando {variant_name} (GPU={DEVICE}) | MLflow run: {run_name}")
 
-            # ✅ Si ahora dejas que Ultralytics descargue: YOLO(f"{variant_name}.pt")
+            #  Si ahora dejas que Ultralytics descargue: YOLO(f"{variant_name}.pt")
             # Si weights_path es ruta local, úsalo:
             model = YOLO(str(weights_path))
 
@@ -272,7 +272,7 @@ def train_variant(variant_name: str, weights_path: Path):
             print(f"📁 Ultralytics run dir: {save_dir}")
 
     finally:
-        # ✅ garantiza cierre incluso si algo explota en medio
+        # garantiza cierre incluso si algo explota en medio
         mlflow.end_run()
 
 
@@ -295,3 +295,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
