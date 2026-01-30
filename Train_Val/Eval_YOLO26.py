@@ -24,8 +24,8 @@ from fiftyone import ViewField as F
 # =========================
 # CONFIG
 # =========================
-MODEL_PATH = r"/home/STUDENTS/hel0057/Downloads/XRay/exported_models/YOLO26n-cls_clahe_best.pt"
-TEST_DIR = r"/home/STUDENTS/hel0057/Downloads/XRay/test"
+MODEL_PATH = r"/XRay/exported_models/YOLO26n-cls_clahe_best.pt"
+TEST_DIR = r"/XRay/test"
 
 # Labels
 FOLDER_MAP = {"anomaly": 0, "normal": 1}
@@ -328,4 +328,5 @@ def main():
     session.wait()
 
 if __name__ == "__main__":
+
     main()
