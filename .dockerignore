@@ -1,0 +1,87 @@
+# ==================================
+# 1. CONTROL DE VERSIONES Y SISTEMA
+# ==================================
+.git/
+.gitignore
+.dockerignore
+.DS_Store
+# Archivos temporales de editores
+.vscode/
+.idea/
+*.swp
+
+# ==================================
+# 2. PYTHON Y ENTORNOS (CRÍTICO)
+# ==================================
+# Nunca envíes el entorno virtual local, Docker crea el suyo propio
+.venv/
+venv/
+env/
+
+# Archivos compilados y cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+
+# Herramientas de test y calidad
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+tests/
+
+# ==================================
+# 3. SEGURIDAD Y CONFIG LOCAL
+# ==================================
+# ¡MUY IMPORTANTE! Nunca subir variables de entorno locales a la imagen
+.env
+.env.local
+.env.*
+
+# No necesitamos los archivos de orquestación dentro de la imagen
+docker-compose.yml
+docker-compose.*
+Dockerfile
+
+# Documentación
+README.md
+docs/
+
+# ==================================
+# 4. DATOS Y MLOPS (Contexto Pesado)
+# ==================================
+# Evitar subir datasets gigantes al daemon de Docker
+datasets/
+data/
+
+# Herramientas de MLOps
+mlruns/
+.dvc/
+dvc.yaml
+dvc.lock
+wandb/
+
+# Notebooks (Jupyter)
+*.ipynb
+.ipynb_checkpoints/
+
+# ==================================
+# 5. TUS REGLAS ESPECÍFICAS
+# ==================================
+# Imágenes de prueba sueltas
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tiff
+
+# Carpetas de código que no usas en producción (según tu estructura anterior)
+python/xrays_evaluation/examples/
+python/xrays_evaluation/src/training/
+
+# Si generas salidas locales de GradCAM, ignorarlas
+eval_outputs_yolo26n/
+outputs/

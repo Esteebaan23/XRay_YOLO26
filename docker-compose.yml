@@ -1,0 +1,38 @@
+services:
+  # --- SERVICIO 1: TU API (Backend) ---
+  xray-api:
+    build: .
+    container_name: xray-cpu-local
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./models:/app/models
+      # Compartimos la carpeta de logs con el host
+      - ./mlruns:/app/mlruns
+    environment:
+      - MODEL_PATH=/app/models/best_model.pt
+      - PORT=8080
+      # Apunta a la base de datos local compartida
+      - MLFLOW_TRACKING_URI=sqlite:///mlruns/mlflow.db
+      - MLFLOW_EXPERIMENT_NAME=Local_Laptop_Test
+      - OMP_NUM_THREADS=1
+      - MKL_NUM_THREADS=1
+      - GIT_PYTHON_REFRESH=quiet
+
+  # --- SERVICIO 2: DASHBOARD MLOps (Nuevo) ---
+  mlflow-ui:
+    # Usamos la misma imagen porque ya tiene mlflow instalado
+    build: .
+    container_name: xray-mlflow-dashboard
+    # Exponemos el puerto 5000 (estándar de MLflow)
+    ports:
+      - "5000:5000"
+    # IMPORTANTE: Mapeamos el MISMO volumen para que vea los datos que escribe la API
+    volumes:
+      - ./mlruns:/app/mlruns
+    # Comando para iniciar solo la interfaz visual
+    command: >
+      mlflow ui 
+      --host 0.0.0.0 
+      --port 5000 
+      --backend-store-uri sqlite:///mlruns/mlflow.db

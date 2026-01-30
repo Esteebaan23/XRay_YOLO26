@@ -1,0 +1,31 @@
+# --- Index URL para versiones CPU (Vital para que el Docker pese poco) ---
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# --- Web Server (FALTABA ESTO) ---
+fastapi
+uvicorn
+python-multipart
+# Requests suele ser util si tu orquestador llama a otras APIs
+requests
+
+# --- Core ML Framework (CPU) ---
+# Nota: Si ultralytics se queja, deja que instale su version preferida de torch
+torch>=2.0.0
+torchvision
+
+# --- Computer Vision Models & Tools ---
+ultralytics
+opencv-python-headless  # Importante: la versión headless es para servidores
+
+# --- MLOps & Tracking ---
+mlflow
+# psutil es util para loguear uso de CPU/RAM en MLflow
+psutil
+
+# --- Data Processing & Base Utils ---
+numpy
+# pandas  <-- COMENTADO: Descomenta solo si REALMENTE lo usas. Ahorras ~100MB de RAM.
+# pyarrow <-- COMENTADO: Idem.
+python-dateutil
+pytz
+six

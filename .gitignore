@@ -1,0 +1,26 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv
+venv/
+env/
+
+# --- MLflow (Logs y DB locales) ---
+mlruns/
+.trash/
+
+# --- IDEs y Sistema Operativo ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Docker ---
+# Ignorar logs de contenedores si se guardaron aquí
+*.log
+
+# --- Opcional: Modelos Gigantes ---
+# Descomenta la siguiente linea si tu modelo pesa >100MB
+# models/*.pt
