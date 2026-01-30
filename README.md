@@ -76,9 +76,9 @@ The system not only predicts but also logs the health of the model in production
 * **Inference Latency:** Time (ms) from image upload to diagnosis delivery.
 * **Confidence Distribution:** Detection of *Model Drift* (monitoring if the model becomes less certain over time).
 * **Prediction Balance:** Ratio between "Normal" and "Anomaly" detections.
-
-```bash
+* 
 ## 📂 **Project Structure**
+```bash
 XRay_YOLO26/
 ├── app/
 │   ├── main.py            # FastAPI entry point (API routes & request handling)
