@@ -15,6 +15,10 @@ Try the system deployed on Google Cloud Run (Serverless):
 *(Note: Since the service uses a "Scale-to-Zero" configuration for cost efficiency, the first request might take 25-45 seconds to wake up the container. Subsequent requests will be instant).*
 
 ---
+Demo:
+
+![Pipeline Overview](Images/Demo.png)
+---
 
 ## 🧠 **System Architecture**
 
